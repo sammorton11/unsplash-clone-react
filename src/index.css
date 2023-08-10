@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+.user-info-column {
+   padding: 15px;
+}
+.user-modal-top {
+   display: flex;
+   flex-direction: 'row';
+   padding: 10px;
+}
+.user-modal-close-button {
+   margin-left: 120px;
+}
+.profile-info {
+   display: flex;
+   flex-direction: 'row';
+}
+.image {
+   border-radius: 6px;
+   width: 400px;
+   transition: transform 0.3s ease-in-out;
+}
+.image-item {
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 40px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fade-in 1s forwards;
+}
+.image:hover {
+    transform: scale(1.05); /* Increase size on hover */
+}
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+.image-description {
+   color: white;
+}
+.image-user {
+   color: white;
+   margin: 10px;
+   padding: 10px;
+}
+
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: top;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+.search-page {
+   height: 100%;
+   padding: 15px;
+   text-align: center;
+}
+
+.search-button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.page-nav-button {
+   padding: 15px;
+   margin-right: 10px;
+}
+
+.page-navigation-container {
+   padding: 25px;
+}
+
+.search-button:hover {
+  border-color: #646cff;
+}
+.search-button:focus,
+.search-button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.search-field {
+   padding: 8px;
+   width: 450px;
+   margin-right: 10px;
+   margin-top: 10px;
+   margin-bottom: 55px;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  .search-button:hover {
+    color: #747bff;
+  }
+  .search-button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+.image-list {
+   display: grid;
+   align-items: center;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust the minimum width as needed */
+   max-width: 1780px; /* Set a max-width to limit to 3 columns */
+   margin: 0 auto; /* Center the grid horizontally */
+   margin-right: 70px;
+   margin-top: 45px;
+   gap: 115px; /* Optional: Add some gap between the columns */
+}
+
+
+/* Add appropriate styling for the modal and its content */
+.user-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 400px; /* Adjust the width as needed */
+  max-width: 80%; /* Limit the maximum width to prevent overflowing */
+  text-align: center; /* Center content horizontally */
+}
+.user-modal-close-button {
+   padding: 10px;
+}
