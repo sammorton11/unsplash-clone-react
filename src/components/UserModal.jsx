@@ -21,6 +21,7 @@ const UserModal = ({ user, onClose }) => {
                   <a href={user.portfolio_url} target='_blank'>Profile link</a>
                </div>
             </div>
+            <button className='p-3 ' onClick={onClose}>Close</button>
          </div>
       </div>
    );
