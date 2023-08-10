@@ -31,19 +31,15 @@
    display: flex;
    flex-direction: 'row';
 }
-.image {
-   border-radius: 6px;
-   width: 400px;
-   transition: transform 0.3s ease-in-out;
-}
 .image-item {
     width: 400px;
     border-radius: 10px;
     box-shadow: 0 40px 6px rgba(0, 0, 0, 0.1);
     opacity: 0;
     animation: fade-in 1s forwards;
+    transition: transform 0.3s ease-in-out;
 }
-.image:hover {
+.image-item:hover {
     transform: scale(1.05); /* Increase size on hover */
 }
 
@@ -83,7 +79,6 @@ h1 {
 .search-page {
    height: 100%;
    padding: 15px;
-   text-align: center;
 }
 
 .search-button {
