@@ -1,27 +1,27 @@
 import React from 'react';
 
-
 const UserModal = ({ user, onClose }) => {
-  return (
+   const profilePicture = user.profile_image.large;
+   const userFullName = user.name;
+   const username = user.username;
+   const linkToPortfolio = user.portfolio_url;
+   const bio = user.bio;
+   const location = user.location;
+
+   return (
       <div className="user-modal">
          <div className="user-modal-content">
-            <div className='user-modal-top'>
-               <h2 className='user-modal-title'>User Profile</h2>
-               <button className="user-modal-close-button" onClick={onClose}>
-                  <span className="close-icon">
-                     <i className="fas fa-times"></i>
-                  </span>
-               </button>
+            <h2 className='text-xl font-semibold'>{userFullName}</h2>
+            <p className="mb-2">Username: {username}</p>
+            <div className='py-1 -ml-8'>
+               <img src={profilePicture} alt="Profile" className="image-item rounded-lg w-75 m-5" />
             </div>
-            <div className='profile-info'>
-               <img src={user.profile_image.large} width="150" height="175" style={{borderRadius: '18px'}}></img>
-               <div className='user-info-column'>
-                  <p>Name: {user.name}</p>
-                  <p>Username: {user.username}</p>
-                  <a href={user.portfolio_url} target='_blank'>Profile link</a>
-               </div>
-            </div>
-            <button className='p-3 ' onClick={onClose}>Close</button>
+            <p className="mb-4">{bio}</p>
+            <div className="mb-4">{location}</div>
+            {linkToPortfolio !== null ? (
+              <a href={linkToPortfolio} target='_blank' rel="noopener noreferrer" className="px-3 py-2 text-blue-500">Portfolio</a> 
+            ): null}
+            <button className="px-3 py-2 bg-blue-500 text-black rounded-lg hover:bg-blue-600" onClick={onClose}>Close</button>
          </div>
       </div>
    );
