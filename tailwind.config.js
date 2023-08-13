@@ -2,7 +2,7 @@
 export default {
   content: [
       "./src/**/*.{html,js,jsx}",
-      'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}'
+      'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
     extend: {
@@ -17,6 +17,9 @@ export default {
         "4xl": "2.25rem",
         "5xl": "3rem",
         "6xl": "4rem",
+        gridTemplateColumns: {
+          'fluid': 'repeat(auto-fit, minmax(20rem, 1fr))',
+        }
       },
    },
   },
